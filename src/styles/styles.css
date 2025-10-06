@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  padding-inline: 32px;
+  margin-inline: auto;
+  max-width: 1300px;
+}
+
+header {
+  background-color: lightskyblue;
+}
+
+.main-header {
+  min-height: 90px;
+  padding-block: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.navigation-drawer {
+  min-height: 100vh;
+  width: 200px;
+  padding: 20px 10px;
+  background-color: #fff;
+
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+
+  box-shadow: 0 0 4px 2px #00000033;
+  transform: translateX(-100%);
+  transition: transform 350ms;
+
+  z-index: 9999;
+}
+
+.navigation-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-button {
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+
+  display: inline-block;
+  background-color: transparent;
+
+  font-weight: bold;
+  font-size: 28px;
+  color: #141e16;
+
+  cursor: pointer;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px 20px;
+}
+
+.nav-list li a {
+  padding: 6px 10px;
+
+  display: block;
+  
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN */
+.main-content {
+  padding-block: 20px;
+}
+
+/* Write your styles more here */
+
+@media screen and (width > 1000px) {
+  .navigation-drawer {
+    min-height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: static;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-list li a {
+    display: inline-block;
+  }
+
+  .drawer-button {
+    display: none;
+  }
+}
+/* --- Styling untuk Kriteria 2 (Daftar Cerita) dan Peta --- */
+
+/* Membuat container list menjadi flex dan responsif */
+.story-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: flex-start;
+}
+
+.story-card {
+    /* Base style: 100% lebar di mobile, border, shadow */
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 0;
+}
+
+.story-card img {
+    /* Penting: Mengatasi masalah gambar terlalu besar */
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.story-card .card-body {
+    padding: 15px;
+}
+
+/* Tablet (768px ke atas) */
+@media screen and (min-width: 768px) {
+    .story-card {
+        /* 2 kolom */
+        width: calc(50% - 10px); 
+    }
+}
+
+/* Desktop (1024px ke atas) */
+@media screen and (min-width: 1024px) {
+    .story-card {
+        /* 3 kolom */
+        width: calc(33.33% - 13.33px); 
+    }
+}
+
+/* Styling Peta */
+#story-map, #story-map-picker {
+    height: 500px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* =============================== */
+/* Tambahkan Styling Form Umum Ini */
+/* =============================== */
+
+.py-5 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+/* Membuat form-group memiliki ruang vertikal yang baik */
+.form-group {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+/* Mengatur input agar memenuhi lebar container dan memiliki border */
+.form-control, 
+.form-control-file {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block; /* Penting untuk textarea dan input */
+}
+
+/* Styling card/container form */
+.card {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Styling Tombol Primary */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.3rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff; /* Biru */
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Helper Class (Jika belum ada) */
+.text-center { text-align: center; }
+.w-100 { width: 100% !important; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.d-block { display: block; }
+.rounded { border-radius: 0.25rem; }
+.p-4 { padding: 1.5rem; }
+.p-3 { padding: 1rem; }
+.bg-light { background-color: #f8f9fa; }
+
+/* Styling Label */
+.font-weight-bold {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block; /* Pastikan label berada di baris sendiri */
+}
+
+/* =============================== */
+/* Tambahan CSS untuk Grid Card List */
+/* =============================== */
+
+/* #story-list-container adalah class "row" */
+#story-list-container {
+    display: flex;
+    flex-wrap: wrap; /* Memastikan kartu pindah baris */
+    margin-left: -15px; /* Sesuaikan dengan padding container */
+    margin-right: -15px; /* Sesuaikan dengan padding container */
+}
+
+/* col-lg-4: 3 kolom untuk layar besar */
+.col-lg-4 {
+    flex: 0 0 33.333333%; /* Ambil 1/3 dari lebar baris */
+    max-width: 33.333333%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* col-md-6: 2 kolom untuk layar sedang */
+@media (max-width: 992px) {
+    .col-md-6 {
+        flex: 0 0 50%; /* Ambil 1/2 dari lebar baris */
+        max-width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-lg-4 {
+        /* Nonaktifkan col-lg-4 di layar md kebawah agar col-md-6 yang bekerja */
+        flex: 0 0 auto;
+        max-width: none;
+    }
+}
+
+/* Story Card Styling (agar tampilan tetap rapi) */
+.story-card {
+    width: 100%; /* Pastikan kartu mengambil lebar penuh col-nya */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%; /* Agar semua kartu punya tinggi yang sama */
+    display: flex;
+    flex-direction: column;
+}
+
+.story-card .img-fluid {
+    width: 100%;
+    height: 200px; /* Tinggi gambar fixed */
+    object-fit: cover;
+}
+
+.story-card .card-body {
+    padding: 15px;
+    flex-grow: 1; /* Agar body memenuhi sisa ruang */
+}
