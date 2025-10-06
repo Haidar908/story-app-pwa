@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     // *** TAMBAHKAN LINE INI ***
     publicPath: './', 
   },
@@ -28,7 +28,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'), // Ini harus mencakup folder 'icons'
-          to: path.resolve(__dirname, 'dist/'),
+          to: path.resolve(__dirname, 'docs/'),
         },
       ],
     }),
