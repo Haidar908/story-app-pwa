@@ -58,7 +58,7 @@ function updateNavigation() {
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     // Pastikan service worker Anda berada di root (dist/sw.js)
-    navigator.serviceWorker.register('/sw.js') 
+    navigator.serviceWorker.register('./sw.js') 
       .then((registration) => {
         console.log('Service Worker registered successfully. Scope:', registration.scope);
       })
