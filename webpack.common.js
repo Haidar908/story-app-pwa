@@ -10,7 +10,7 @@ module.exports = {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'docs'),
     // *** TAMBAHKAN LINE INI ***
-    publicPath: './', 
+    publicPath: '/story-app-pwa/', 
   },
   module: {
     rules: [
